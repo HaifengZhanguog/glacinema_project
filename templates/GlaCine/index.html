@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% extends 'GlaCine/base.html' %}
+{% load staticfiles %}
+
+<body>
+  {% block body_block %}
+      <div class="header">
+        <div class="public-width">
+          <h1>CINEMAS</h1>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="public-width">
+
+          {% for cinema in cinemas %}
+          
+          <div class="list">
+            <div class="list-img">
+              <img src="{% static cinema.picture %}" alt="Picture Of Matchbox Cineclub">            
+            </div>
+
+            <div class="vist">
+            <h6>The number of times visitors visited: </h6> {{cinema.visit}}
+            </div>
+
+            <div class="list-text">
+              <a href="{% url 'GlaCine:cinema' cinema.slug %}">
+              <h5>{{cinema.name}}</h5>
+            </a>
+            </div>
+          </div>
+          {% endfor %}
+
+      <div class="box1">
+          <div>
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#">&laquo;</a>
+              </li>
+              {% for page_num in pages %}
+              <li class="page-item">
+                <a class="page-link" href="{% url 'GlaCine:index' page_num %}">{{page_num}}</a>
+              </li>
+              {% endfor %}
+              <li class="page-item">
+                <a class="page-link" href="#">&raquo;</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+        
+      </div>
+    
+      </div>
+
+
+
+  {% endblock %} 
+</body>
+

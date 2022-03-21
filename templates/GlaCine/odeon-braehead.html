@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% extends 'GlaCine/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{% block body_block %}
+        <!-- cinema picture -->
+        <div class="picture col-md-4">
+            <br />                
+            <img src="{% static 'images/ODEONBraehead.jpg' %}" style="width:38rem;height:25rem; margin:0.3rem" alt="Cinema of ODEON Braehead" /><br />
+        </div>
+        <br />
+        <!-- cinema discription -->
+        <div class="card text-black border-primary col-md-4" style="width:38rem; height:25rem; margin:0.3rem">
+            <div class="card-header"style="font-size:large">ODEON Braehead&emsp;<span class="fa-solid fa-rss" style="color:rgb(8, 8, 8)"></span></div>
+            <div class="card-body">
+              <h4 class="card-title"><strong>Description:</strong></h4>
+              <p class="card-text">State-of-the-art chain cinema for blockbusters in 2-D or 3-D format, plus family and student deals.
+                <br />
+                <br />
+                <br />
+                <h4 class="card-title"><strong>Book Tickets:</strong></h4>
+                <a href="https://www.odeon.co.uk/cinemas/braehead/?/">Click here</a>
+             </p>               
+            </div>
+        </div>
+          <!-- cinema googlemap -->
+        <div class="card text-black col-md-4" style="width:30rem;height:25rem; margin:0.3rem">
+            <div class="card-header" style="font-size:large">Cinema Location
+            <span class="fa-solid fa-street-view"></span></div>
+            <div class="card-body">
+                <iframe title="google map"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2238.043590126504!2d-4.373562784102789!3d55.87925848058736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48884f401f54d3a9%3A0x5bda59712edbe5e0!2sODEON%20Braehead!5e0!3m2!1sen!2suk!4v1647778377181!5m2!1sen!2suk"
+                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe><br />
+            </div>
+        </div>
+
+          <!-- Comment rating field -->
+        <div class="card-2 text-black border-third col-md-4" style="width:39rem;height:15rem; margin:0.3rem">
+            <div class="card-header"style="font-size:large">Comment rating:</div>
+              <ul class="star-item">Comfortable:&emsp;
+                  <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                  <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                  <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                  <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>    
+              </ul>
+              <ul class="star-item">Food:&emsp;
+                  <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                  <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                  <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                  <span class="fa-solid fa-heart" style="color:rgb(187, 183, 183)"></span>    
+              </ul>
+              <ul class="star-item">Facilities:&emsp;
+                  <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                  <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                  <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                  <span class="fa-solid fa-heart" style="color:rgb(187, 183, 183)"></span>    
+              </ul>    
+        </div>   
+
+          <!-- comment field -->
+        <div class="card-2 text-black border-third col-md-4" style="width:45rem;height:15rem; margin:0.3rem">
+            <div class="card-header"style="font-size:large">Comment field:</div>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between"style="width: 100%;">
+                  <strong style="font-family:cursive">This cinema is better than Odeon luxy quay.</strong>
+                     <span class="gadget">views:14</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between"style="width: 100%;">
+                  <strong style="font-family:cursive">The theater has plenty of space and comfortable seats.</strong>
+                    <span class="gadget">views:11</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between"style="width: 100%;">
+                  <strong style="font-family:cursive">Beautiful.</strong>
+                <span class="gadget">views:12</span>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- comment button -->
+        <div class="card-3 text-black border-third col-md-4" style="width:23rem;height:15rem; margin:0.3rem">
+            <div class="card-header-bottom"><span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>&emsp;Review ...</div>
+            <div class="card-body">
+              <ul class="card-text">
+                <a href="{% url 'GlaCine:review' %}">
+                  <button type="button" class="btn btn-primary"> Leave your </br>comment here</button>
+                </a> 
+              </ul>
+            </div>
+        </div>
+{% endblock %}

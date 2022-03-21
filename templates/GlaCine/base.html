@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head lang ="en">
+        <meta charset = "UTF-8" />
+        <title>
+        </title>
+    <!-- link a bootstrap rescourse, then link your own css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'cnew/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'font/fontawesome-free-6.0.0-web/css/all.css' %}">
+    </head>
+    <body>
+        <!-- create a navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <!-- Fixed navigation bar -->
+            <div class="container-fluid">
+              <!-- logo: GlaCine -->
+              <a class="navbar-brand" href="{% url 'GlaCine:index' 1 %}"><strong>GlaCine</strong></a>
+              <!-- list function button -->
+              <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'GlaCine:index' 1 %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                        <a class="nav-link" href="{% url 'GlaCine:index' 1 %}">Cinema</a>
+                  </li>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href=" " onclick="myFunction()">Experience</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="{% url 'GlaCine:login' %}">Login</a>
+                  </li>
+                  </li>
+                </ul>
+                <!-- add search function -->
+                <div class="d-flex">
+                  <input id="searchInput" type="text" placeholder="Search a cinema">
+                  <button class="btn btn-secondary" type="submit" onclick="to()">Search</button>
+                </div>
+              </div>
+            </div>
+        </nav>
+        <div>
+            {% block body_block %}
+            {% endblock %}
+        </div>
+        <hr />     
+    </body>
+    <script type="text/javascript">
+      function myFunction() {
+        var txt;
+        if (confirm("Our Team List:\n\nGen Li\nFerguson Rachael\nWei Gao\nHaifeng Zhang\nXing Cao")) {
+          txt = "You pressed the confirm";
+        } else {
+          txt = "You pressed the canceled";
+        }
+        document.getElementById("demo").innerHTML = txt;
+      }
+      
+      function to() {
+        var searchValue = document.getElementById("searchInput").value;
+        window.location.href="https://www.google.com/search?q="+searchValue+"&oq="+searchValue+"&aqs=chrome..69i57j46i175i199i433i512j0i131i433j0i131i395i433j0i395i433i512j0i395i512j0i395i433i512l2.7759j1j15&sourceid=chrome&ie=UTF-8";
+      }
+
+      </script>
+</html>

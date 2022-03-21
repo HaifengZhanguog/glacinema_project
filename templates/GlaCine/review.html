@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends 'GlaCine/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    cinema page
+{% endblock %}
+
+{% block body_block %}
+    <form>
+        <div>
+             <h1 style="color: white;">RATE YOUR EXPERIENCE</h1>
+        </div>
+        <!-- Experience rating field -->
+            <ul class="star-item" style="color: white;">Comfortable:&emsp;
+                <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                <span class="fa-solid fa-heart" style="color:rgb(187, 183, 183)"></span>    
+            </ul>
+              <ul class="star-item" style="color: white;">Food:&emsp;
+                <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                <span class="fa-solid fa-heart" style="color:rgb(187, 183, 183)"></span>
+                <span class="fa-solid fa-heart" style="color:rgb(187, 183, 183)"></span>
+                <span class="fa-solid fa-heart" style="color:rgb(187, 183, 183)"></span>    
+              </ul>
+            <ul class="star-item" style="color: white;">Facilities:&emsp;
+                <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                <span class="fa-solid fa-heart" style="color:rgb(184, 31, 31)"></span>
+                <span class="fa-solid fa-heart" style="color:rgb(187, 183, 183)"></span>
+                <span class="fa-solid fa-heart" style="color:rgb(187, 183, 183)"></span>    
+            </ul>  
+            
+            <br>
+            <br>
+       
+        <!-- Write review area -->
+        <div class="form-group">
+            <ul class="star-item" style="color: white;">&emsp;
+            <label for="input_name"><span class="glyphicon glyphicon-user"></span>&nbsp;Where did you go?</label>
+            <input class="form-control" type="text">
+            
+        </div>
+
+        <div class="form-group">
+            <ul class="star-item" style="color: white;">&emsp;
+            <label for="input_name"><span class="glyphicon glyphicon-user"></span>&nbsp;Leave a review</label>
+
+            <input id="input_name" class="form-control input-lg" name="name" type="text" autofocus>
+        </div>
+
+        <!-- submit button -->
+          
+        <button type="button" class="btn btn-primary" style="margin:10px;" href="{% url 'GlaCine:login' %}"> SUBMIT</button>
+                    
+{% endblock %}   

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'GlaCine/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    cinema page
+{% endblock %}
+
+{% block body_block %}
+
+<div style="height: 200px;float:left;width: 200px;margin-top: 10%;margin-left: 10%;">
+    <font size ='7'>Login</font><br>
+     <br>
+    <form id="login_form" method="post" action="{% url 'GlaCine:login' %}">
+        {% csrf_token %}
+        <font size ='5'>Username: </font><input type="text" name="username" value="" size="50" />
+        <br />
+        <font size ='5'>Password: </font><input type="password" name="password" value="" size="50" />
+        <br />
+         <br>
+        <input type="submit" value="login" />
+    </form>
+    
+</div>
+
+<div style="height: 200px;width:50%;float:right;margin-top: 10%;">
+    <form id="register_form" method="post" action="{% url 'GlaCine:register' %}">
+        {% csrf_token %}
+        <font size ='7'>Register</font><br>
+         <br>
+         <font size ='5'>IF YOU STILL DON'T HAVE A GLACINE.COM ACCOUNT,</font><br>
+         <font size ='5'>USE THIS OPTION TO ACCESS THE REGISTER FORM.</font><br>
+         <br>
+         <br>
+         <br>
+        <input type="submit" value="register" />
+    </form>
+    </div>
+
+{% endblock %}   
